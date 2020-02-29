@@ -58,9 +58,9 @@ Using the location data obtained in second step of model preparation, the Foursq
 </br>
 
 ## 5. Methodology
-</br>
 
 The following steps were employed to obtain the required results:
+</br>
 
 #### 5.1 Importing Necessary Libraries The first step is to import the necessary libraries and packages
 
