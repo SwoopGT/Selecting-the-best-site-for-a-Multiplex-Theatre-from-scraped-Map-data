@@ -32,7 +32,8 @@ The report also aims to make the business decision of construction of such an es
 
 </br>
 
-## 4. Data required The data required to build a model to suggest a location for the establishment is as follows: 
+## 4. Data required The data required to build a model to suggest a location for the establishment is as follows:
+</br>
  
 #### 4.1 Neighborhood Data: Data pertaining to neighborhoods of Pune city obtained from Wikipedia. 
 
@@ -57,6 +58,7 @@ Using the location data obtained in second step of model preparation, the Foursq
 </br>
 
 ## 5. Methodology
+</br>
 
 The following steps were employed to obtain the required results:
 
