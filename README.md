@@ -34,25 +34,25 @@ The report also aims to make the business decision of construction of such an es
 
 ## 4. Data required The data required to build a model to suggest a location for the establishment is as follows: 
  
-> ### 4.1 Neighborhood Data: Data pertaining to neighborhoods of Pune city obtained from Wikipedia. 
+### 4.1 Neighborhood Data: Data pertaining to neighborhoods of Pune city obtained from Wikipedia. 
 
-> The data specifying the index and the neighborhoods of Pune city can be obtained through Wikipedia page: Neighborhoods of Pune city. This provides a table listing the neighborhoods.
+The data specifying the index and the neighborhoods of Pune city can be obtained through Wikipedia page: Neighborhoods of Pune city. This provides a table listing the neighborhoods.
 
-> Web scraping techniques such as using the Beautiful Soup library or the Wikipedia library can be used to convert this html data into a pandas data frame. This is helpful for analysis with python in Jupyter Notebook.
-
-</br>
-
-> ### 4.2 Location Data: Location data of these neighborhoods obtained from geocoder library of google or location data available online. 
-
-> The latitudes and longitudes of neighborhoods of Pune city are required in order to access the third step of the model preparation. The latitude and longitude (co-ordinates) can be obtained using the geocoder library of google.
-
-> An alternative to the above step, if the geocoder library becomes unreliable, is obtaining a geospatial file detailing the location co-ordinates from web directly. 
+Web scraping techniques such as using the Beautiful Soup library or the Wikipedia library can be used to convert this html data into a pandas data frame. This is helpful for analysis with python in Jupyter Notebook.
 
 </br>
 
-> ### 4.3 Venue Data: Data of venues in these neighborhoods, obtained from Foursquare API
+### 4.2 Location Data: Location data of these neighborhoods obtained from geocoder library of google or location data available online. 
 
-> Using the location data obtained in second step of model preparation, the Foursquare API is used to obtain the venue data of these neighborhoods. The data is then cleaned and the data pertaining to Multiplex establishments of each neighborhoods is obtained. The data is then used for machine learning algorithms to perform exploratory analysis in order to obtain results and make inferences. 
+The latitudes and longitudes of neighborhoods of Pune city are required in order to access the third step of the model preparation. The latitude and longitude (co-ordinates) can be obtained using the geocoder library of google.
+
+An alternative to the above step, if the geocoder library becomes unreliable, is obtaining a geospatial file detailing the location co-ordinates from web directly. 
+
+</br>
+
+### 4.3 Venue Data: Data of venues in these neighborhoods, obtained from Foursquare API
+
+Using the location data obtained in second step of model preparation, the Foursquare API is used to obtain the venue data of these neighborhoods. The data is then cleaned and the data pertaining to Multiplex establishments of each neighborhoods is obtained. The data is then used for machine learning algorithms to perform exploratory analysis in order to obtain results and make inferences. 
 
 </br>
 
@@ -60,60 +60,60 @@ The report also aims to make the business decision of construction of such an es
 
 The following steps were employed to obtain the required results:
 
-> ### 5.1 Importing Necessary Libraries The first step is to import the necessary libraries and packages
+### 5.1 Importing Necessary Libraries The first step is to import the necessary libraries and packages
 
-> Numpy – For numerical calculations 
-> Matplotlib – plotting and visualization 
-> Pandas – Data manipulation 
-> Geocoder – Obtaining location data 
-> Folium – Creation of maps 
-> Beautiful Soup – Web Scraping 
-> Sklearn – Machine Learning 
+Numpy – For numerical calculations 
+Matplotlib – plotting and visualization 
+Pandas – Data manipulation 
+Geocoder – Obtaining location data 
+Folium – Creation of maps 
+Beautiful Soup – Web Scraping 
+Sklearn – Machine Learning 
 
 </br>
 
-> ### 5.2 Web Scarping
+### 5.2 Web Scarping
 
-> Using the Beautiful Soup (bs4) package, the data from Wikipedia entry of ‘Neighbourhoods of Pune’ can be scrapped. 
+Using the Beautiful Soup (bs4) package, the data from Wikipedia entry of ‘Neighbourhoods of Pune’ can be scrapped. 
 The data can be cleaned to obtain the required results and then stored in the form of a dataframe using Pandas library. 
 
 </br>
 
-> ### 5.3 Visualization
+### 5.3 Visualization
 
-> Using the geocoder library the co-ordinates of Pune city are obtained and using the folium library, a map denoting the neighbourhoods as markers is visualized.
-
-</br>
-
-> ### 5.4 Obtaining Venues
-
-> By using the developer account of Foursquare API, venues data can be obtained. The details required to access the account are the credentials which are hidden in the code submitted.
-
-> Then using parameters such as setting search radius at 2000m and a limit of 100 venues, a venues list is obtained. This venue list is used to create a dataframe using pandas.
-
-> A quick check is carried out to verify if Multiplex as a category exists within it. 
+Using the geocoder library the co-ordinates of Pune city are obtained and using the folium library, a map denoting the neighbourhoods as markers is visualized.
 
 </br>
 
-> ### 5.5 One Hot Encoding
+### 5.4 Obtaining Venues
 
-> The obtained data frame is one hot encoded using the get dummies method of pandas. Using the group by and mean, statistical information is obtained which is used to filter the dataframe to obtain only the values where “Multiplex” is positive. 
+By using the developer account of Foursquare API, venues data can be obtained. The details required to access the account are the credentials which are hidden in the code submitted.
 
-</br>
+Then using parameters such as setting search radius at 2000m and a limit of 100 venues, a venues list is obtained. This venue list is used to create a dataframe using pandas.
 
-> ### 5.6 Clustering
-
-> Using the sklearn library, K-Means clustering is applied on the data. K-Means is a clustering technique of Machine learning where depending upon the data (similarity or range), the data is divided within certain clusters.
-
-> The number of clusters is pre-defined in order to assign the centroids along with the cluster means can be calculated. The nearest data points to these centroids are grouped together in to similar clusters. Using the values of within cluster elements, a new centroid value is calculated and the process is iterated.
-
-> The number of clusters for this analysis was selected as 5. Obtaining the cluster labels from the results, the cluster data was merged with the dataframe and is presented as final dataframe for visualization. 
+A quick check is carried out to verify if Multiplex as a category exists within it. 
 
 </br>
 
-> ### 5.7 Cluster Visualization
+### 5.5 One Hot Encoding
 
-> Using the folium library the visualization of clusters of venues in the Pune city are obtained.
+The obtained data frame is one hot encoded using the get dummies method of pandas. Using the group by and mean, statistical information is obtained which is used to filter the dataframe to obtain only the values where “Multiplex” is positive. 
+
+</br>
+
+### 5.6 Clustering
+
+Using the sklearn library, K-Means clustering is applied on the data. K-Means is a clustering technique of Machine learning where depending upon the data (similarity or range), the data is divided within certain clusters.
+
+The number of clusters is pre-defined in order to assign the centroids along with the cluster means can be calculated. The nearest data points to these centroids are grouped together in to similar clusters. Using the values of within cluster elements, a new centroid value is calculated and the process is iterated.
+
+The number of clusters for this analysis was selected as 5. Obtaining the cluster labels from the results, the cluster data was merged with the dataframe and is presented as final dataframe for visualization. 
+
+</br>
+
+### 5.7 Cluster Visualization
+
+Using the folium library the visualization of clusters of venues in the Pune city are obtained.
 
 </br>
 
