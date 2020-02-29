@@ -34,7 +34,7 @@ The report also aims to make the business decision of construction of such an es
 
 ## 4. Data required The data required to build a model to suggest a location for the establishment is as follows: 
  
-### 4.1 Neighborhood Data: Data pertaining to neighborhoods of Pune city obtained from Wikipedia. 
+##### 4.1 Neighborhood Data: Data pertaining to neighborhoods of Pune city obtained from Wikipedia. 
 
 The data specifying the index and the neighborhoods of Pune city can be obtained through Wikipedia page: Neighborhoods of Pune city. This provides a table listing the neighborhoods.
 
@@ -42,7 +42,7 @@ Web scraping techniques such as using the Beautiful Soup library or the Wikipedi
 
 </br>
 
-### 4.2 Location Data: Location data of these neighborhoods obtained from geocoder library of google or location data available online. 
+##### 4.2 Location Data: Location data of these neighborhoods obtained from geocoder library of google or location data available online. 
 
 The latitudes and longitudes of neighborhoods of Pune city are required in order to access the third step of the model preparation. The latitude and longitude (co-ordinates) can be obtained using the geocoder library of google.
 
@@ -50,7 +50,7 @@ An alternative to the above step, if the geocoder library becomes unreliable, is
 
 </br>
 
-### 4.3 Venue Data: Data of venues in these neighborhoods, obtained from Foursquare API
+##### 4.3 Venue Data: Data of venues in these neighborhoods, obtained from Foursquare API
 
 Using the location data obtained in second step of model preparation, the Foursquare API is used to obtain the venue data of these neighborhoods. The data is then cleaned and the data pertaining to Multiplex establishments of each neighborhoods is obtained. The data is then used for machine learning algorithms to perform exploratory analysis in order to obtain results and make inferences. 
 
@@ -60,7 +60,7 @@ Using the location data obtained in second step of model preparation, the Foursq
 
 The following steps were employed to obtain the required results:
 
-### 5.1 Importing Necessary Libraries The first step is to import the necessary libraries and packages
+##### 5.1 Importing Necessary Libraries The first step is to import the necessary libraries and packages
 
 Numpy – For numerical calculations 
 Matplotlib – plotting and visualization 
@@ -72,20 +72,20 @@ Sklearn – Machine Learning
 
 </br>
 
-### 5.2 Web Scarping
+##### 5.2 Web Scarping
 
 Using the Beautiful Soup (bs4) package, the data from Wikipedia entry of ‘Neighbourhoods of Pune’ can be scrapped. 
 The data can be cleaned to obtain the required results and then stored in the form of a dataframe using Pandas library. 
 
 </br>
 
-### 5.3 Visualization
+##### 5.3 Visualization
 
 Using the geocoder library the co-ordinates of Pune city are obtained and using the folium library, a map denoting the neighbourhoods as markers is visualized.
 
 </br>
 
-### 5.4 Obtaining Venues
+##### 5.4 Obtaining Venues
 
 By using the developer account of Foursquare API, venues data can be obtained. The details required to access the account are the credentials which are hidden in the code submitted.
 
@@ -95,13 +95,13 @@ A quick check is carried out to verify if Multiplex as a category exists within 
 
 </br>
 
-### 5.5 One Hot Encoding
+##### 5.5 One Hot Encoding
 
 The obtained data frame is one hot encoded using the get dummies method of pandas. Using the group by and mean, statistical information is obtained which is used to filter the dataframe to obtain only the values where “Multiplex” is positive. 
 
 </br>
 
-### 5.6 Clustering
+##### 5.6 Clustering
 
 Using the sklearn library, K-Means clustering is applied on the data. K-Means is a clustering technique of Machine learning where depending upon the data (similarity or range), the data is divided within certain clusters.
 
@@ -111,7 +111,7 @@ The number of clusters for this analysis was selected as 5. Obtaining the cluste
 
 </br>
 
-### 5.7 Cluster Visualization
+##### 5.7 Cluster Visualization
 
 Using the folium library the visualization of clusters of venues in the Pune city are obtained.
 
